@@ -1,14 +1,15 @@
+output "vnet_name" {
+  value = azurerm_virtual_network.vnet.name
+}
+
 output "vnet_id" {
-  value       = azurerm_virtual_network.this.id
-  description = "VNet ID"
+  value = azurerm_virtual_network.vnet.id
 }
 
 output "subnet_ids" {
-  value       = { for k, v in azurerm_subnet.this : k => v.id }
-  description = "Subnet IDs"
+  value = [for s in azurerm_subnet.subnets : s.id]
 }
 
 output "nsg_id" {
-  value       = var.create_nsg ? azurerm_network_security_group.this[0].id : null
-  description = "NSG ID (optional)"
+  value = try(azurerm_network_security_group.nsg.id, null)
 }
