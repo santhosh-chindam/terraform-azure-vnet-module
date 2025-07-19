@@ -17,21 +17,6 @@ This project is a submission for the Azure Terraform Infrastructure Challenge, s
 - ✅ Deploy using a **GitHub Actions workflow**.
 - ✅ Emphasize **clean code**, **secure practices**, and **scalability**.
 
----
-
-## 🧱 Folder Structure
-
-terraform-azure-environments/
-├── envs/
-│   │   └── main.tf
-│   │   └── variables.tf
-│   │   └── terraform.tfvars
-├── .github/
-│   └── workflows/
-│       └── terraform-deploy.yml
-├── README.md
-
-
 🔁 Module Usage
 Module: terraform-azure-vnet-module
 Features:
